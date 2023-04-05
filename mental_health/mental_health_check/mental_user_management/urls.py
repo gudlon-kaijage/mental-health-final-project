@@ -12,7 +12,7 @@ urlpatterns = [
 
     ############################ User ###########################
     
-    path('ListUser',views.listUser),
+    path('listUser',views.listUser),
     path('addUser',views.addUser),
     path('deleteUser/<str:pk>',views.deleteUser),
     path('editUser/<str:pk>',views.updateUser),
@@ -20,7 +20,7 @@ urlpatterns = [
 
     ############################ Disease ###########################
     
-    path('addDisease',views.listDisease),
+    path('listDisease',views.listDisease),
     path('addDisease',views.addDisease),
     path('deleteDisease/<str:pk>',views.deleteDisease),
     path('editDisease/<str:pk>',views.updateDisease),

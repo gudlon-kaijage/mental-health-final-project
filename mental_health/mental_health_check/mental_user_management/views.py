@@ -90,8 +90,8 @@ def addDisease(request):
 
 @api_view(['GET','POST'])
 def listDisease(request):
-    Disease = Disease.Categories.objects.all()
-    serializer = DiseaseSerializer(Disease,many=True)
+    disease = Disease.objects.all()
+    serializer = DiseaseSerializer(disease,many=True)
 
 
     return Response(serializer.data)
@@ -268,6 +268,16 @@ def deleteFactor(request,pk):
       return Response({"success":"deleted successful"})
 
      return Response({"error":"error while deleting"})
+
+@api_view(['GET','POST'])
+def addOtpCode(request):
+
+    serializer = FactorSerializer(data=request.data)
+
+    serializer.is_valid(raise_exception=True )
+    serializer.save()
+    print(serializer.errors)
+    return Response(serializer.data)
 
 @api_view(['GET','POST'])
 def listOtpCode(request):

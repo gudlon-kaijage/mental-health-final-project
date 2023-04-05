@@ -12,14 +12,14 @@ import datetime
 
 class Disease(models.Model):
     name = models.CharField(max_length=100)
-    Patient = models.ManyToManyField(User)
-    # description = models.TextField()
+    patient = models.ManyToManyField(User)
+    description = models.TextField()
 
 class Advice(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     diseases = models.ManyToManyField(Disease)
-    Patient = models.ManyToManyField(User)
+    patient = models.ManyToManyField(User)
 
 class Progress(models.Model):
     patient = models.ForeignKey(User, on_delete=models.CASCADE)

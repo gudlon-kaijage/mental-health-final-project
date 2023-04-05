@@ -16,18 +16,21 @@ class DiseaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Disease
         fields = '__all__'
+        depth = 1
 
 class AdviceSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Advice
         fields = '__all__'
+        depth = 1
 
 class ProgressSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Progress
         fields = '__all__'
+        depth = 1
 
 class FactorSerializer(serializers.ModelSerializer):
     # access_Level = Access_LevelSerializer
@@ -35,6 +38,7 @@ class FactorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Factor
         fields = '__all__'
+        depth = 1
         
 class OtpCodeSerializer(serializers.ModelSerializer):
     # access_Level = Access_LevelSerializer
